@@ -1,0 +1,215 @@
+@media(min-width:768px) {
+    nav ul li {
+        &:not(:hover) {
+            filter: blur(1px);
+            padding: 5px 10px;
+        }
+    }
+}
+
+.nav__mobile {
+    background-color: $secondary-color;
+    transition: 0.5s;
+}
+
+
+// historia
+
+@media(max-width:1280px) {
+    .contenido__historia {
+        display: flex;
+        flex-direction: column;
+
+        .grid__historia {
+            grid-template-columns: repeat(2, 50% 50%);
+            grid-template-areas:
+                'a1 a2'
+                'a3 a4'
+                'a5 a6'
+                'a7 a8'
+                'a9 a9';
+            padding-left: 0%;
+
+            .card__contenedor__historia {
+                .card-body h5 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    font-size: medium;
+                }
+
+                .card__btn__historia {
+                    font-size: small;
+                    gap: 0px;
+                    margin: 0px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .hero__content__alumnos h2 {
+        font-size: 30px;
+    }
+
+    .hero__content__alumnos p {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .contenido__historia {
+        display: flex;
+        flex-direction: column;
+
+        .grid__historia {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0%;
+
+            .card__contenedor__historia {
+                width: 100%;
+            }
+
+            .contenedor {
+                background-color: $terciary-color;
+            }
+
+        }
+    }
+}
+
+// contacto
+@media (max-width: 1024px) {
+    .contenido__contacto {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .body__contenedor__contacto {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'title'
+                'form'
+                'map';
+        }
+    }
+}
+
+// ingles
+// @media (max-width: 1024px) {
+//     .grilla__contenido__ingles {
+//         .row {
+//             display: grid;
+//             grid-template-columns: repeat(4, 1fr);
+//             grid-template-areas:
+//                 'a1 a2 a3 a4'
+//                 'a5 a6 a7 a8'
+//                 'a9 a10 a11 a12'
+//                 'a13 a14 a15 a16'
+//                 'a17  a18 a19 a20';
+//             padding-left: 0px;
+//             padding-right: 0px;
+//             gap: 20px;
+//         }
+//     }
+// }
+
+@media (max-width: 1024px) {
+    .grilla__contenido__ingles {
+        .row {
+            display: grid;
+            grid-template-columns: repeat(30% 30% 30%, 1fr);
+            justify-items: center;
+            grid-template-areas:
+                'a1 a2 a3'
+                'a4 a5 a6'
+                'a7 a8 a9'
+                'a10 a11 a12'
+                // 'a13 a14 a15'
+                // 'a16 a17 a18';
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .grilla__contenido__ingles {
+        .row {
+            display: grid;
+            grid-template-columns: repeat(50% 50%, 1fr);
+            justify-items: center;
+            grid-template-areas:
+                'a1 a2'
+                'a3 a4'
+                'a5 a6'
+                'a7 a8'
+                'a9 a10'
+                'a11 a12'
+
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    .dropdown__list {
+        a {
+            padding: 5px;
+            font-size: 10px;
+            align-self: center;
+
+            &:focus {
+                padding: 5px;
+                font-size: smaller;
+                transition: 2s;
+            }
+        }
+
+    }
+
+    .grilla__contenido__ingles {
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+// index
+@media (max-width: 1024px) {
+    .body__home__alumnos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        grid-auto-rows: repeat(8, auto);
+        grid-template-areas:
+            "a1 a2 "
+            "a1 a2 "
+            "a3 a4 "
+            "a5 a6 "
+            "a7 a6 "
+            "a8 a9 "
+            "a8 a10 "
+            "a11 a12";
+    }
+}
+
+@media (max-width: 768px) {
+
+    .body__home__alumnos {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero__content__alumnos {
+        h5 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
+}

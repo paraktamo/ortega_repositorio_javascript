@@ -1,0 +1,137 @@
+/* ___________contenido carrusel hero banner*/
+
+.hero__content__alumnos h2 {
+    font-size: 40px;
+    text-shadow: $contrast-color 5px 5px 5px;
+}
+
+.hero__content__alumnos p {
+    font-size: 20px;
+    text-align: center;
+    margin: 0%;
+    @extend .descriptionSubtitle;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 50vh;
+    }
+
+.carousel-control-prev-icon {
+    @include carouselIcon(15px, 15px, 0, 1px);
+
+    &:hover {
+        @include carouselIcon(100px, 100px, 0.5s, 0px)
+    }
+}
+
+.carousel-control-next-icon {
+    @include carouselIcon(15px, 15px, 0, 1px);
+
+    &:hover {
+        @include carouselIcon(100px, 100px, 0.5s, 0px)
+    }
+}
+
+
+/*___________ Body */
+
+
+/* Grilla */
+
+h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    padding: 15px;
+    color: $contrast-color;
+}
+
+.body__home__alumnos {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+        "a1 a2 a3"
+        "a1 a2 a4"
+        "a8 a5 a9"
+        "a12 a7 a9"
+        "a12 a11 a10"
+        "a6 a11 a10";
+
+    .article__home__alumnos {
+        background-color: $primary-color;
+        color: $terciary-color;
+        border-radius: 20px 0px;
+        font-size: 16px;
+        font-family: 'Arial Narrow Bold', sans-serif;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        margin: 10px;
+        box-shadow: $shadow-color 5px 5px;
+
+        h3 {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        p {
+            letter-spacing: 1px;
+        }
+    }
+
+    .z1 {
+        grid-area: a1;
+    }
+
+    .z2 {
+        grid-area: a2;
+    }
+
+    .z3 {
+        grid-area: a3;
+    }
+
+    .z4 {
+        grid-area: a4;
+    }
+
+    .z5 {
+        grid-area: a5;
+    }
+
+    .z6 {
+        grid-area: a6;
+    }
+
+    .z7 {
+        grid-area: a7;
+    }
+
+    .z8 {
+        grid-area: a8;
+    }
+
+    .z9 {
+        grid-area: a9;
+    }
+
+    .z10 {
+        grid-area: a10;
+    }
+
+    .z11 {
+        grid-area: a11;
+    }
+
+    .z12 {
+        grid-area: a12;
+    }
+}

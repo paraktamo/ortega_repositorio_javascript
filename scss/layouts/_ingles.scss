@@ -1,0 +1,205 @@
+/* _________ ingles */
+
+.contenido__ingles {
+    display:flex;
+    flex-direction: column;
+
+    .body__contenedor__ingles {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../assets/img/ingles0.jpeg);
+        background-size: cover;
+        padding: 50px;
+        height: 40vh;
+        p{
+            @extend .descriptionSubtitle;
+        }
+
+        .body__dropdown__ingles {
+            width: 70%;
+            padding-bottom: 20px;
+            color: $terciary-color;
+            font-size: 16px;
+            font-family: 'Arial Narrow Bold', sans-serif;
+            
+
+            .btn-secondary {
+                width: 100%;
+                color: $secondary-color;
+                background-color: $terciary-color;
+                font-size: large;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+                &:hover {
+                    color: $terciary-color;
+                    background-color: $primary-color;
+                    transition: 0.5s;
+                }
+            }
+
+            ul {
+                width: 100%;
+                background-color: $terciary-color;
+
+                li a {
+                    padding: 15px;
+                    align-items: center;
+                    text-align: center;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    transition: 0.5s;
+                    
+
+                    &:hover {
+                        padding: 15px;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        align-items: center;
+                        text-align: center;
+                        color: $secondary-color;
+                        background-color: $terciary-color;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .grilla__contenido__ingles {
+        display: flex;
+        // width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // height: fit-content;
+        gap: 5%;
+        justify-content: center;
+        // position: relative;
+        // padding: 0px;
+        margin: 0 auto;
+
+        div {
+            padding: 20px 5px 5px 5px;
+            margin: 0px;
+            // width: 100%;
+            
+
+            article {
+                padding: 10px;
+                text-align: center;
+                align-items: center;
+                min-width: 200px;
+                max-width:100px;
+                align-self: center;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 10px 0px;
+                    box-shadow: $shadow-color 5px 5px;
+                    padding: auto;
+                    cursor: pointer;
+                    height: 200px;
+
+                    &:hover {
+                        align-self: center;
+                        justify-self: center;
+                        place-items: center;
+                        transition: 0.5s;
+                        border-radius: 0px 20px 0px 0px;
+                        box-shadow: $shadow-color 20px 20px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .x1 {
+            grid-area: a1;
+
+        }
+
+        .x2 {
+            grid-area: a2;
+
+        }
+
+        .x3 {
+            grid-area: a3;
+
+        }
+
+        .x4 {
+            grid-area: a4;
+
+        }
+
+        .x5 {
+            grid-area: a5;
+
+        }
+
+        .x6 {
+            grid-area: a6;
+
+        }
+
+        .x7 {
+            grid-area: a7;
+
+        }
+
+        .x8 {
+            grid-area: a8;
+
+        }
+
+        .x9 {
+            grid-area: a9;
+
+        }
+
+        .x10 {
+            grid-area: a10;
+
+        }
+
+        .x11 {
+            grid-area: a11;
+
+        }
+
+        .x12 {
+            grid-area: a12;
+
+        }
+
+        .x13 {
+            grid-area: a13;
+
+        }
+
+        .x14 {
+            grid-area: a14;
+
+        }
+
+        .x15 {
+            grid-area: a15;
+
+        }
+
+        .x16 {
+            grid-area: a16;
+
+        }
+
+        .x17 {
+            grid-area: a17;
+
+        }
+
+        .x18 {
+            grid-area: a18;
+
+        }
+    }
+}

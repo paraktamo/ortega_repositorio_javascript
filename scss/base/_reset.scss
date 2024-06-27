@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    flex-direction: column;
+    display: flex;
+    padding: 0;
+    margin: 0%;
+    height: 100vh;
+    background-color: $terciary-color;
+}

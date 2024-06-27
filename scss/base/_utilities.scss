@@ -1,0 +1,22 @@
+@mixin carouselIcon($height, $width,$transition,$filter) {
+    height: $height;
+    width: $width;
+    transition: $transition;
+    filter: blur($filter);
+  }
+
+.descriptionSubtitle{
+  background-color: $shadow-color;
+  padding: 5px;
+  border-radius: 0px 20px 0px 20px;
+  color:$terciary-color;
+  text-shadow: 5px 5px 10px $contrast-color;
+  text-align: center;
+ }
+
+ @keyframes efectoNav {
+  0%{ width: 0px; }
+  50%{ width: 120px;
+    background-color: $shadow-color; }
+  100%{ width: 0px;}
+}

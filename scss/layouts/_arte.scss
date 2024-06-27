@@ -1,0 +1,128 @@
+/* _____________________arte */
+
+.contenido__arte {
+    display: flex;
+    flex-direction: column;
+
+    .body__contenedor__arte {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(../assets/img/imagenesArte/Arte-Guernica-Pablo-Picasso.jpg);
+        background-size: cover;
+        padding: 50px;
+        height: 40vh;
+        position: relative;
+
+        p {
+            @extend .descriptionSubtitle;
+        }
+
+        .acordeon__arte {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+            background-color: $shadow-color;
+
+            .accordion-item {
+                gap: 5px;
+
+                acordeon__arte__btn {
+                    font-size: 20px;
+
+                    &:hover {
+                        font-size: 40px;
+                        transition: 0.5s;
+                    }
+
+                    &:collapsed {
+                        background-color: $terciary-color;
+                        box-shadow: none;
+                    }
+
+                    &:focus {
+                        background-color: $terciary-color;
+                        box-shadow: none;
+                    }
+
+                    &:not(.collapsed) {
+                        background-color: $terciary-color;
+                        box-shadow: none;
+                    }
+
+                }
+
+                /* con este estilo selecioné los botones del acordeon */
+                &:nth-child(1n) .accordion-button {
+                    background-color: $primary-color;
+                    padding: 0px;
+                }
+
+                &:nth-child(2n) .accordion-button {
+                    background-color: $secondary-color;
+                    padding: 0px;
+                }
+
+                /* con este estilo selecioné los headers del acordeon */
+                &:nth-child(1n) .accordion-header {
+                    @if $primary-color !=#8153ef {
+                        background-color: #ff0000;
+                    }
+
+                    @else {
+                        background-color: $primary-color;
+                    }
+
+                    padding: 25px;
+                    margin: 0px;
+                }
+
+                &:nth-child(2n) .accordion-header {
+                    @if $secondary-color !=#52d053 {
+                        background-color: #ff0000;
+                    }
+
+                    @else {
+                        background-color: $secondary-color
+                    }
+
+                    padding: 25px;
+                    margin: 0px;
+                }
+
+                /* con este estilo seleccioné el h2 de cada item */
+
+                &:nth-child(4n+1) .accordion-header {
+                    font-family: $single-day-font;
+                }
+
+                &:nth-child(4n+2) .accordion-header {
+                    font-family: $satisfy-font;
+                }
+
+                &:nth-child(4n+3) .accordion-header {
+                    font-family: $dancing-font;
+                }
+
+                &:nth-child(4n) .accordion-header {
+                    font-family: $zeyada-font;
+                }
+
+                .accordion-button:focus {
+                    box-shadow: none;
+                }
+
+                .acordeon__arte__contenido {
+                    display: flex;
+                    flex-direction: column;
+
+                    .acordeon__arte__texto {
+                        margin: 15px;
+                        color: $contrast-color;
+                    }
+                }
+            }
+        }
+    }
+}

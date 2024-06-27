@@ -1,0 +1,83 @@
+/* ______________________Contacto */
+
+.contenido__contacto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .body__contenedor__contacto {
+        // background-image: url(/assets/img/Web\ capture_2-2-2024_33522_coolors.co.jpeg);
+        background-size: cover;
+        width: 100%;
+        padding: 50px;
+        gap: 15px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            'title title'
+            'form map ';
+
+        .contenedor__contacto__form {
+            @extend .descriptionSubtitle;
+            grid-area: form;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            div {
+                padding: 5px;
+
+                label {
+                    color: $contrast-color;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    font-size: large;
+                    letter-spacing: 3px;
+                }
+
+                button {
+                    background-color: $submit-button-color;
+                    color: $terciary-color;
+                    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    font-size: large;
+                    letter-spacing: 3px;
+                    width: 100%;
+
+                    &:hover {
+                        background-color: $terciary-color;
+                        color: $submit-button-color;
+                        font-size: large;
+                        letter-spacing: 3px;
+                        width: 100%;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+
+        .titulo__contacto {
+            grid-area: title;
+            text-align: center;
+        }
+    }
+
+    .mapa__contactos {
+        grid-area: map;
+        text-align: center;
+        @extend .descriptionSubtitle;
+
+        .info__contactos {
+            text-align: center;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            padding: 5px;
+
+        }
+    }
+}

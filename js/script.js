@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let usuario;
     let usuarioEnLS = JSON.parse(localStorage.getItem('usuario'))
-    
+
     usuario = usuarioEnLS ? usuarioEnLS : null;
 
     if (usuarioEnLS) {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         divB.id = 'divB';
 
         const mensajeB = document.createElement('h3');
-        mensajeB.innerText = 'Te damos la bienvenida al portal de Casa del Sur, por favor ingresa tu n° de alumna/o'; 
+        mensajeB.innerText = 'Te damos la bienvenida al portal de Casa del Sur, por favor ingresa tu n° de alumna/o';
 
         const InputB = document.createElement('input');
         InputB.type = 'number';
@@ -42,13 +42,41 @@ document.addEventListener("DOMContentLoaded", function () {
         contenedorB.appendChild(divB);
     }
 });
+
+const url = "/js/alumnos.json";
+
+function obtenerYMostrarFoto(alumnoId) {
+    fetch(url)
+        .then(response => response.json())
+        .then(fotosAlumnos => {
+            const fotoAlumno = fotosAlumnos.find(foto => foto.id === alumnoId);
+
+            const contenedorFotos = document.getElementById('fotos');
+            contenedorFotos.innerHTML = ''; 
+
+            if (fotoAlumno) {
+                const img = document.createElement('img');
+                img.src = fotoAlumno.thumbnailUrl;
+                img.alt = `Foto de ${fotoAlumno.title}`;
+                contenedorFotos.appendChild(img);
+                divMostrarAlum.appendChild(contenedorFotos);
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener la foto del alumno:', error);
+        });
+}
+
+
+
 // local de inicio
+
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, JSON.stringify(valor)) };
 const guardarSession = (clave, valor) => { sessionStorage.setItem(clave, JSON.stringify(valor)) };
 
-const carrito = JSON.parse(localStorage.getItem('carrito')) ?? []; 
+const carrito = JSON.parse(localStorage.getItem('carrito')) ?? [];
 function guardarCarritoEnLocalStorage(carrito) {
-    guardarLocal("carrito", carrito.map(curso => curso.id)); 
+    guardarLocal("carrito", carrito.map(curso => curso.id));
 }
 
 /* Cursos  -------------------------------------------------*/
@@ -81,7 +109,7 @@ class claseAlumnos {
 
         this.curso.push(curso);
         reducirCupo(curso);
-        guardarCarritoEnLocalStorage(this.curso); 
+        guardarCarritoEnLocalStorage(this.curso);
 
     }
     quitarCursos(idCurso) {
@@ -109,7 +137,6 @@ const arrayAlumnos = [alumno1, alumno2, alumno3, alumno4, alumno5, alumno6, alum
 
 /* Menu -------------------------------------------------*/
 const contenedorContenido = document.getElementById('contenido');
-
 function mostrarAlumno(a) {
     contenedorContenido.innerHTML = '';
 
@@ -124,10 +151,11 @@ function mostrarAlumno(a) {
     mostrarP.id = 'mostrarP';
     mostrarP.innerText = `Código: ${a.id} \nNombre: ${a.nombre} \nApellido: ${a.apellido}`;
 
-
     contenedorContenido.appendChild(divMostrarAlum);
     divMostrarAlum.appendChild(mostrarH4);
     divMostrarAlum.appendChild(mostrarP);
+
+    obtenerYMostrarFoto(a.id);
 }
 
 function reducirCupo(e) {
@@ -189,7 +217,13 @@ function tomarCursos(a) {
                 a.agregarCursos(curso);
                 tomarCursos(a);
                 sacarCursos(a);
-                alert("Curso de " + curso.nombre + " agregado con exito");
+                // alert("Curso de " + curso.nombre + " agregado con exito");
+                Swal.fire({
+                    title: 'Éxito',
+                    text: `Curso de ${curso.nombre} agregado con éxito`,
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
             });
 
             cursoDiv.appendChild(botonTomar);
@@ -223,7 +257,13 @@ function sacarCursos(a) {
                 a.quitarCursos(curso.id);
                 tomarCursos(a);
                 sacarCursos(a);
-                alert("Curso de " + curso.nombre + " removido con exito");
+                // alert("Curso de " + curso.nombre + " removido con exito");
+                Swal.fire({
+                    title: 'Éxito',
+                    text: `Curso de ${curso.nombre} removido con éxito`,
+                    icon: 'info',
+                    confirmButtonText: 'Aceptar'
+                });
             });
 
             cursoDiv.appendChild(botonQuitar);
@@ -378,6 +418,7 @@ function corroborarAlumno(m) {
         contenedorB.appendChild(saludoAlumno);
 
         mostrarMenu(alumno);
+        
 
     } else {
         let pErrorYaExiste = document.getElementById("perrorBienvenida");
